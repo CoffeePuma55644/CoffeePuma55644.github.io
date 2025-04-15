@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 listItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
                 listItem.innerHTML = `
                     <span>${sale.name} (x${sale.quantitySold || 1})</span>
-                    <span class="badge bg-success rounded-pill">${sale.price.toLocaleString('fr-CD')} FC</span>
+                    <span class="badge bg-success rounded-pill">${sale.price.toLocaleString('fr-CD')} $</span>
                 `;
                 salesListUl.appendChild(listItem);
                 total += sale.price * (sale.quantitySold || 1);
