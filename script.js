@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td><img src="${item.image || 'https://via.placeholder.com/60/CCCCCC/FFFFFF?text=N/A'}" alt="${item.name}" class="stock-item-img"></td>
                 <td>${item.name}</td>
                 <td>${item.quantity}</td>
-                <td>${item.price.toLocaleString('fr-CD')} FC</td>
+                <td>${item.price.toLocaleString('fr-CD')} $</td>
                 <td>
                     <button class="btn btn-success btn-sm me-1 sell-btn ${item.quantity <= 0 ? 'disabled' : ''}" data-id="${item.id}" title="Vendre">
                         <i class="bi bi-cart-dash-fill"></i>
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        totalSalesEl.textContent = `${total.toLocaleString('fr-CD')} FC`;
+        totalSalesEl.textContent = `${total.toLocaleString('fr-CD')} $`;
 
         // Petite animation sur le total
          totalSalesEl.classList.add('updated');
