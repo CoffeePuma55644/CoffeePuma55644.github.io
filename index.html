@@ -53,7 +53,7 @@
                             <th scope="col">Photo</th>
                             <th scope="col">Nom</th>
                             <th scope="col">Quantité</th>
-                            <th scope="col">Prix (FC)</th>
+                            <th scope="col">Prix ($)</th>
                             <th scope="col">Actions</th>
                         </tr>
                     </thead>
@@ -72,7 +72,7 @@
             <div class="card shadow-sm">
                 <div class="card-body">
                     <h5 class="card-title">Récapitulatif des Ventes</h5>
-                    <p class="card-text">Total des ventes aujourd'hui : <strong id="totalSales" class="text-success fs-4">0.00 FC</strong></p>
+                    <p class="card-text">Total des ventes aujourd'hui : <strong id="totalSales" class="text-success fs-4">0.00 $</strong></p>
                     <h6>Détail des ventes :</h6>
                     <ul id="salesList" class="list-group list-group-flush mb-3" style="max-height: 200px; overflow-y: auto;">
                         <li class="list-group-item text-muted">Aucune vente enregistrée pour le moment.</li>
@@ -112,7 +112,7 @@
                             <input type="number" class="form-control" id="itemQuantity" required min="0">
                         </div>
                         <div class="mb-3">
-                            <label for="itemPrice" class="form-label">Prix Unitaire (FC)</label>
+                            <label for="itemPrice" class="form-label">Prix Unitaire ($)</label>
                             <input type="number" class="form-control" id="itemPrice" required min="0" step="0.01">
                         </div>
                         <div class="mb-3">
