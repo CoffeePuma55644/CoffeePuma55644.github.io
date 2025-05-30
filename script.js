@@ -1,3 +1,4 @@
+console.log("Script loaded successfully!");
 document.addEventListener("DOMContentLoaded", function () {
   const image = document.getElementById("Joker");
   const buttonMario = document.getElementById("mario");
