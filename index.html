@@ -31,16 +31,22 @@
           <h1 class="fly-in">Mon portfolio</h1>
         </div>
         <!-- Hamburger Menu (Hidden by default) -->
-        <div class="hamburger fly-in">
+        <div class="hamburger fly-in" onclick="toggleMenu()">
           <div class="bar"></div>
           <div class="bar"></div>
           <div class="bar"></div>
         </div>
         <div class="navbar-right nav-buttons fly-in">
-          <button id="mario" class="fly-in">Mario</button>
-          <button id="cloud" class="fly-in">Cloud</button>
-          <button id="joker" class="fly-in">Joker</button>
-          <button id="moi" class="fly-in">Moi</button>
+          <button class="mario fly-in">Mario</button>
+          <button class="cloud fly-in">Cloud</button>
+          <button class="joker fly-in">Joker</button>
+          <button class="moi fly-in">Moi</button>
+        </div>
+        <div class="navbar-right nav-buttons fly-in responsive-burger">
+          <button class="mario fly-in">Mario</button>
+          <button class="cloud fly-in">Cloud</button>
+          <button class="joker fly-in">Joker</button>
+          <button class="moi fly-in">Moi</button>
         </div>
       </nav>
     </header>
@@ -50,6 +56,16 @@
         <!-- Bubbles will be dynamically added here -->
       </div>
     </main>
-    <script src="script.js"></script>
+    <script src="script.js">
+        const responsiveBurger = document.querySelector('.responsive-burger');
+          function toggleMenu() {
+
+        if (responsiveBurger.style.display === 'flex') {
+          responsiveBurger.style.display = 'none';
+        } else {
+          responsiveBurger.style.display = 'flex';
+        }
+      }
+    </script>
   </body>
 </html>
