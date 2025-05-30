@@ -1,342 +1,268 @@
-/* style.css - Thème Sombre Bleuté */
+/* 
+  Ce fichier CSS est utilisé pour styliser la page d'accueil de l'application.
+  Il définit les styles pour le corps de la page, le conteneur principal et les éléments de navigation.
+*/
 
-/* Définition de la palette de couleurs en variables CSS */
-:root {
-  --blue1:  #0D1520; /* App Background */
-  --blue2:  #111927; /* Subtle Backgrounds (Navbar, Modal, Card...) / Striped Rows */
-  --blue3:  #0D2847; /* UI Element Background (Inputs, ...) */
-  --blue4:  #003362; /* Hovered UI Background / Table Header */
-  --blue5:  #004074; /* Active/Selected UI / Subtle Borders / Disabled BG */
-  --blue6:  #104D87; /* Borders / Dividers */
-  --blue7:  #205D9E; /* Hovered Borders / Low Contrast Text / Secondary Button BG */
-  --blue8:  #2870BD; /* Solid Borders / UI Text / Secondary Button Hover BG / Muted Text */
-  --blue9:  #0090FF; /* Primary Accent Color (Primary Buttons, Links) */
-  --blue10: #3B9EFF; /* Hovered Primary Accent */
-  --blue11: #70B8FF; /* High Contrast Text / Secondary Text */
-  --blue12: #C2E6FF; /* Primary Text Color */
+/*
+Les couleurs de fond viennent du site de Radix Colors
+Elles vont du background au foreground
 
-  /* Variables sémantiques pour Bootstrap Overrides (si nécessaire) */
-  --bs-body-bg: var(--blue1);
-  --bs-body-color: var(--blue12);
-  --bs-border-color: var(--blue6);
-  --bs-primary-rgb: 0, 144, 255; /* Corresponds to --blue9 for focus rings etc. */
-  /* Ajoutez d'autres overrides Bootstrap si besoin */
-}
+Joker       Cloud      Mario        Moi
+#191111     #11131F    #0B161A     #111111
+#201314     #141726    #101B20     #191919
+#3B1219     #182449    #082C36     #222222
+#500F1C     #1D2E62    #003848     #2A2A2A
+#611623     #253974    #004558     #313131
+#72232D     #304384    #045468     #3A3A3A
+#8C333A     #3A4F97    #12677E     #484848
+#B54548     #435DB1    #11809C     #606060
+#E5484D     #3E63DD    #00A2C7     #6E6E6E
+#EC5D5E     #5472E4    #23AFD0     #7B7B7B
+#FF9592     #9EB1FF    #4CCCE6     #B4B4B4
+#FFD1D9     #D6E1FF    #B6ECF7     #EEEEEE
 
-/* Styles Globaux */
+*/
+
+/* Palette Radix Colors */
 body {
-    background-color: var(--bs-body-bg);
-    color: var(--bs-body-color);
-    transition: background-color 0.3s ease;
-    font-size: 0.95rem; /* Légère augmentation pour lisibilité */
+  background-color: #191111;
+  color: #ffd1d9;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.2em;
+  line-height: 1.5em;
+  margin: 0;
+  padding: 0;
 }
 
-/* Titres */
-h2, h3, h4, h5, h6 {
-   color: var(--blue11); /* Texte secondaire pour les titres */
-   margin-bottom: 1rem;
+header {
+  background-color: #201314;
+  height: 70px;
 }
 
-/* Liens */
-a {
-    color: var(--blue9);
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-a:hover {
-    color: var(--blue10);
-    text-decoration: underline;
-}
-
-/* Navbar */
 .navbar {
-  background-color: var(--blue2) !important; /* Important pour surcharger bg-primary */
-  border-bottom: 1px solid var(--bs-border-color);
-  padding-top: 0.8rem;
-  padding-bottom: 0.8rem;
-}
-.navbar-brand, .nav-link {
-  color: var(--blue11) !important;
-}
-.nav-link:hover, .navbar-brand:hover {
-  color: var(--blue12) !important;
-}
-.nav-link.active {
-    color: var(--blue9) !important;
-    font-weight: 600; /* Un peu plus gras */
-}
-/* Couleur du bouton burger sur mobile */
-.navbar-toggler {
-    border-color: var(--blue7);
-}
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(112, 184, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+  height: 70px;
+  background-color: #201314;
 }
 
-/* Formulaires */
-.form-control, .form-select {
-    background-color: var(--blue3);
-    color: var(--bs-body-color);
-    border: 1px solid var(--blue6);
-}
-.form-control:focus, .form-select:focus {
-    background-color: var(--blue3);
-    color: var(--bs-body-color);
-    border-color: var(--blue9); /* Accent color border on focus */
-    box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), .25);
-}
-.form-control::placeholder {
-    color: var(--blue8);
-    opacity: 0.7;
-}
-.form-label {
-    color: var(--blue11);
-    margin-bottom: 0.5rem;
-}
-.form-text {
-    color: var(--blue8); /* Texte d'aide plus discret */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
-/* Boutons */
-.btn {
-    transition: all 0.2s ease-in-out;
-    border: 1px solid transparent;
-    padding: 0.4rem 0.8rem; /* Ajustement taille boutons */
-    font-weight: 500;
-}
-.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Ombre plus prononcée */
-}
-.btn:focus {
-     box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), .25);
+#Joker {
+  border-radius: 50%;
+  padding: 4px;
+  background: #3b1219;
+  object-fit: cover;
 }
 
-.btn-primary {
-    background-color: var(--blue9);
-    border-color: var(--blue9);
-    color: var(--blue1); /* Texte sombre sur fond clair */
-}
-.btn-primary:hover, .btn-primary:focus {
-    background-color: var(--blue10);
-    border-color: var(--blue10);
-    color: var(--blue1);
+h1 {
+  font-size: 1.5em;
+  margin: 0;
+  font-weight: bold;
 }
 
-.btn-secondary {
-     background-color: var(--blue7);
-     border-color: var(--blue7);
-     color: var(--blue12);
+.navbar-right {
+  display: flex;
+  gap: 15px;
 }
- .btn-secondary:hover, .btn-secondary:focus {
-     background-color: var(--blue8);
-     border-color: var(--blue8);
-     color: var(--blue12);
- }
 
-/* Maintien des couleurs sémantiques Bootstrap par défaut pour Success/Warning/Danger */
-/* Vous pouvez les mapper à la palette bleue si vous préférez */
-.btn-success { background-color: #198754; border-color: #198754; color: #fff; }
-.btn-success:hover { background-color: #157347; border-color: #146c43; }
-.btn-warning { background-color: #ffc107; border-color: #ffc107; color: #000; }
-.btn-warning:hover { background-color: #ffca2c; border-color: #ffc720; color: #000; }
-.btn-danger { background-color: #dc3545; border-color: #dc3545; color: #fff; }
-.btn-danger:hover { background-color: #bb2d3b; border-color: #b02a37; }
+.nav-buttons {
+  display: flex;
+  gap: 15px;
+}
 
+.nav-buttons button {
+  background: #3b1219;
+  color: #ffd1d9;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
 
-/* État désactivé */
-.btn:disabled, .btn.disabled {
-    background-color: var(--blue5);
-    border-color: var(--blue5);
-    color: var(--blue8);
-    opacity: 0.6;
-    cursor: not-allowed;
+.nav-buttons button:hover {
+  background: #e5484d;
+}
+
+main {
+  padding: 32px;
+}
+
+body.fade,
+header,
+.navbar,
+main,
+#Joker,
+.nav-buttons button,
+.bubble {
+  transition: background 0.7s, color 0.7s, box-shadow 0.7s, transform 0.4s,
+    opacity 0.7s;
+}
+
+.fly-in {
+  opacity: 0;
+  transform: translateY(-60px) scale(0.7) rotate(-10deg);
+  animation: flyIn 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.fly-in:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.fly-in:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.fly-in:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.fly-in:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.fly-in:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+@keyframes flyIn {
+  to {
+    opacity: 1;
     transform: none;
-    box-shadow: none;
-}
-/* Icônes dans les boutons */
-.btn .bi {
-    vertical-align: middle;
-    margin-bottom: 2px; /* Ajustement alignement icônes */
+  }
 }
 
-/* Tableau */
-.table {
-    color: var(--bs-body-color);
-    border-color: var(--bs-border-color);
-    margin-top: 1rem; /* Espace au-dessus du tableau */
-}
-.table thead.table-dark th { /* Surcharger .table-dark */
-    background-color: var(--blue4);
-    color: var(--bs-body-color);
-    border-color: var(--blue6);
-    text-transform: uppercase; /* Majuscules pour en-têtes */
-    font-size: 0.85em;
-    letter-spacing: 0.5px;
-}
-.table-striped > tbody > tr:nth-of-type(odd) > * {
-    --bs-table-accent-bg: var(--blue2); /* Fond rayé */
-     color: var(--bs-body-color);
-}
-.table-striped > tbody > tr:nth-of-type(even) > * {
-   background-color: transparent; /* Fond lignes paires */
-   color: var(--bs-body-color);
-}
-.table-hover > tbody > tr:hover > * {
-    --bs-table-accent-bg: var(--blue4); /* Fond au survol */
-    color: var(--bs-body-color);
-}
-/* Annuler les styles de survol précédents si présents */
-#stockTableBody tr:hover {
-   background-color: transparent;
-   transform: none;
-}
-.table td, .table th {
-   border-color: var(--bs-border-color);
-   vertical-align: middle;
-   padding: 0.8rem 0.6rem; /* Ajuster padding cellules */
-}
-#stockTableBody td {
-    color: var(--blue11); /* Texte principal du tableau */
-}
-#stockTableBody td:nth-of-type(2) { /* Nom de l'article */
-   color: var(--blue12); /* Mettre le nom en évidence */
-   font-weight: 500;
-}
-/* Images dans le tableau */
-.stock-item-img {
-    max-width: 50px; /* Taille image réduite */
-    height: 50px;
-    border-radius: 4px;
-    object-fit: cover;
-    vertical-align: middle;
-    border: 1px solid var(--blue5);
-    background-color: var(--blue3); /* Fond si image transparente/non trouvée */
-}
-/* Message 'Aucun résultat' */
-#noResults {
-    color: var(--blue8);
-    padding: 2rem;
+a {
+  color: #ffd1d9;
+  text-decoration: none;
+  transition: color 0.2s;
+
+  font-weight: bold;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-
-/* Modals */
-.modal-content {
-    background-color: var(--blue2);
-    color: var(--bs-body-color);
-    border: 1px solid var(--bs-border-color);
-    border-radius: 8px; /* Coins arrondis */
-}
-.modal-header {
-    border-bottom: 1px solid var(--bs-border-color);
-}
-.modal-header .btn-close {
-     filter: invert(80%) grayscale(100%) brightness(150%); /* Bouton fermer visible */
-}
-.modal-footer {
-    border-top: 1px solid var(--bs-border-color);
+button {
+  background: #3b1219;
+  color: #ffd1d9;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
 }
 
-/* Card (Fin de Journée) */
-.card {
-    background-color: var(--blue2);
-    border: 1px solid var(--bs-border-color);
-    border-left: 5px solid var(--blue7); /* Garder une bordure sémantique */
-    color: var(--bs-body-color);
-    border-radius: 6px;
-}
-.card-body {
-    padding: 1.5rem;
-}
-.card-title {
-    color: var(--blue11);
-    margin-bottom: 1rem;
-}
-.card-text {
-    color: var(--bs-body-color);
-    margin-bottom: 1rem;
-}
-#totalSales {
-    color: var(--blue11);
-    font-weight: bold;
-    font-size: 1.5rem; /* Total plus grand */
-    display: inline-block; /* Pour transform */
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-#totalSales.updated {
-    color: var(--blue9); /* Highlight avec couleur accent */
-    transform: scale(1.05); /* Léger zoom */
-}
-#fin-journee h6 { /* Sous-titre "Détail des ventes" */
-    color: var(--blue11);
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    font-size: 0.9em;
-    text-transform: uppercase;
+#Joker,
+.nav-buttons button,
+h1 {
+  transition: transform 0.2s;
 }
 
-
-/* List Group (Liste des ventes) */
-.list-group {
-    border-radius: 4px; /* Arrondir la liste */
-}
-.list-group-item {
-    background-color: transparent;
-    color: var(--blue11);
-    border-color: var(--blue5); /* Séparateurs discrets */
-    padding: 0.6rem 1rem;
-}
-.list-group-item .badge {
-    background-color: var(--blue8);
-    color: var(--blue12);
-    font-size: 0.8em;
-    font-weight: 500;
-}
-.list-group-flush {
-     border: 1px solid var(--blue5); /* Bordure pour la liste flush */
-}
-.list-group-flush > .list-group-item {
-     border-width: 0 0 1px;
-}
-.list-group-flush > .list-group-item:last-child {
-   border-bottom-width: 0;
-}
-.list-group-item.text-muted {
-    color: var(--blue8) !important; /* Message "Aucune vente" */
-    font-style: italic;
+#Joker:hover,
+.nav-buttons button:hover,
+h1:hover {
+  transform: scale(1.1);
 }
 
-/* Footer */
-footer {
-    background-color: var(--blue2) !important; /* Surcharger bg-light */
-    color: var(--blue8) !important; /* Texte discret */
-    border-top: 1px solid var(--bs-border-color);
-    padding: 1.5rem 0;
-    font-size: 0.9em;
+.bubble {
+  margin: 32px auto 0 auto;
+  max-width: 480px;
+  background: rgba(30, 30, 30, 0.85);
+  border-radius: 20px 20px 20px 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  padding: 24px 32px;
+  color: inherit;
+  font-size: 1.1em;
+  border-left: 6px solid #ffd1d9;
+  opacity: 1;
+  transition: background 0.7s, color 0.7s, border-color 0.7s, opacity 0.7s;
 }
 
-/* Aperçu image dans le modal */
-.img-thumbnail {
-    background-color: var(--blue3);
-    border: 1px solid var(--bs-border-color);
-    padding: 4px;
+.bubble h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.3em;
 }
 
-/* Réactivité (ajustements si nécessaires) */
+body.fading,
+body.fading * {
+  transition: none !important;
+}
+
+body.fading {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Mobile Styles */
 @media (max-width: 768px) {
-   body {
-       font-size: 0.9rem; /* Réduire un peu la police sur mobile */
-   }
-   h2 {
-       font-size: 1.4rem;
-   }
-   /* Optionnel: Masquer la colonne photo sur mobile si trop chargée */
-   /* .table th:first-child, .table td:first-child { display: none; } */
-   .btn {
-       padding: 0.35rem 0.7rem; /* Boutons un peu plus petits */
-       font-size: 0.85rem;
-   }
-   .table td, .table th {
-        padding: 0.6rem 0.4rem; /* Moins de padding dans les cellules */
-   }
+  .navbar-right {
+    display: none; /* Hide the nav buttons */
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10; /* Ensure it's above other elements */
+  }
+
+  .hamburger .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #ffd1d9; /* Adjust color as needed */
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-buttons {
+    position: fixed;
+    left: -100%;
+    top: 70px; /* Height of the header */
+    gap: 0;
+    flex-direction: column;
+    background-color: #201314; /* Match header background */
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    z-index: 9; /* Below hamburger but above content */
+  }
+
+  .nav-buttons button {
+    margin: 16px 0;
+    padding: 16px;
+    border-radius: 0;
+    width: 100%;
+    display: block;
+  }
+
+  .nav-buttons.active {
+    left: 0;
+  }
+
+  /* Rotate bars to create 'X' when menu is open */
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
 }
