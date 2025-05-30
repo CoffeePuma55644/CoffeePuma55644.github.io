@@ -161,6 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "https://images4.alphacoders.com/137/thumb-1920-1376435.jpg",
       "https://deadline.com/wp-content/uploads/2023/09/13_FF7REBIRTH_0915_PV_FIX.png?w=681&h=383&crop=1",
       "https://static1.thegamerimages.com/wordpress/wp-content/uploads/2023/01/cloud-strife-final-fantasy-7-remake.jpg",
+      "https://www.iwastesomuchtime.com/wp-content/uploads/sites/68/2021/12/b6f9808a-17a7-45dc-83a8-3a2b8411c6f5-34164.jpeg",
       "https://www.pngmart.com/files/13/Cloud-Strife-PNG-Image.png",
     ];
     const galleryBubble = createGalleryBubble(galleryImages, "#D6E1FF");
@@ -212,7 +213,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const logos = [
       "./images/IMG-20250426-WA0030.jpeg",
       "./images/IMG-20250521-WA0002.jpg",
-      // Add more logos as needed
+      "https://pngdownload.io/wp-content/uploads/2023/12/YouTube-Logo-PNG-Symbol-for-Video-Platform-Transparent-jpg.webp",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWIA3bvG_EU1LYMMrJHORzDUelfbH9SWqY4g&s", // Add more logos as needed
     ];
     const galleryBubble = createGalleryBubble(logos, "#EEEEEE");
 
