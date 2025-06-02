@@ -1,4 +1,6 @@
 console.log("Script loaded successfully!");
+console.log("Welcome to my program");
+console.log("Welcome to my project!");
 document.addEventListener("DOMContentLoaded", function () {
   const image = document.getElementById("Joker");
   const header = document.querySelector("header");
