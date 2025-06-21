@@ -213,8 +213,9 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
     const logos = [
-      "https://static.wikia.nocookie.net/heros/images/e/e7/Sung_Jin-Woo.webp/revision/latest?cb=20220712140208&path-prefix=fr",
       "https://cherry.img.pmdstatic.net/fit/https.3A.2F.2Fimg.2Egamesider.2Ecom.2Fs3.2Ffrgsg.2F1280.2Fsolo-leveling.2Fdefault_2025-03-28_c43ff035-79dc-4980-8b86-bca9fcaa6dbe.2Epng/1200x675/quality/80/solo-leveling.jpg",
+      "https://static.wikia.nocookie.net/heros/images/e/e7/Sung_Jin-Woo.webp/revision/latest?cb=20220712140208&path-prefix=fr",
+
       "https://pngdownload.io/wp-content/uploads/2023/12/YouTube-Logo-PNG-Symbol-for-Video-Platform-Transparent-jpg.webp",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWIA3bvG_EU1LYMMrJHORzDUelfbH9SWqY4g&s", // Add more logos as needed
     ];
